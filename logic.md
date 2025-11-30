@@ -45,3 +45,5 @@ Take the image and convert it into a 2d array of RGB values.
 | ijmn | jkno | klop |
 
 Every time, consistent number of pixels being averaged
+
+Subspace size is ceiling Og / New
