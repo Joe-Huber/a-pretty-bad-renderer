@@ -34,10 +34,13 @@ def generate_new_image(og_img, new_x):
 
     og_x_ind = 0
     og_y_ind = 0
-    
+
     for y in range(new_y):
         for x in range(new_x):
             print(f"Processing pixel at ({x}, {y})")
+            og_x_ind += traversal_x
+        og_x_ind = 0
+        og_y_ind += traversal_y
 
 
 def get_dimensions(arr):
