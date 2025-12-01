@@ -45,3 +45,19 @@ def generate_new_image(og_img, new_x):
 
 def get_dimensions(arr):
     return [len(arr), len(arr[0])]
+
+def generate_subspace(arr, x, y, width, length):
+    subspace = []
+    og_height = len(arr)
+    if og_height == 0:
+        return np.array(subspace)
+    og_width = len(arr[0])
+
+    y_end = min(y + length, og_height)
+    x_end = min(x + width, og_width)
+
+    for i in range(y, y_end):
+        row = arr[i][x:x_end]
+        subspace.append(row)
+    
+    return subspace
