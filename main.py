@@ -4,7 +4,7 @@ from image_loader import render
 from develop_modified_image import generate_new_image
 import matplotlib.pyplot as plt
 
-image_path = "images/172x172.png"
+image_path = "images/860x1033.png"
 quality_x = 100 # The quality of the image, based on how many columns there are
 
 if __name__ == "__main__":
