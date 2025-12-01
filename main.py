@@ -2,6 +2,7 @@
 # Takes an image and quality level as input.
 from image_loader import render
 from develop_modified_image import generate_new_image
+from color_print import print_colored_image
 import matplotlib.pyplot as plt
 
 image_path = "images/kev-img.png"
@@ -13,3 +14,4 @@ if __name__ == "__main__":
     new_img = generate_new_image(img, quality_x)
     #plt.imshow(new_img)
     #plt.show()
+    print_colored_image(new_img)
