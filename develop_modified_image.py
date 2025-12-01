@@ -1,3 +1,4 @@
+import numpy as np
 from rsa.common import ceil_div
 
 
@@ -22,10 +23,22 @@ def generate_new_image(og_img, new_x):
         traversal_x = subspace_x
     else:
         traversal_x = subspace_x -1
+
     #Y traversal
     if og_y % new_y == 0:
         traversal_y = subspace_y
     else:
         traversal_y = subspace_y -1
+
+    new_img = np.zeros([new_y, new_x])
+
+    og_x_ind = 0
+    og_y_ind = 0
+    
+    for y in range(new_y):
+        for x in range(new_x):
+            print(f"Processing pixel at ({x}, {y})")
+
+
 def get_dimensions(arr):
     return [len(arr), len(arr[0])]
