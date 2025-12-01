@@ -16,31 +16,13 @@ def generate_new_image(og_img, new_width):
     subspace_width = ceil_div(og_width, new_width)
     subspace_height = ceil_div(og_height, new_height)
 
-    #The traversal sizes (how many spots to move in loop)
-
-    #X traversal
-    if og_width % new_width == 0:
-        traversal_width = subspace_width
-    else:
-        traversal_width = subspace_width - 1
-
-    #Y traversal
-    if og_height % new_height == 0:
-        traversal_height = subspace_height
-    else:
-        traversal_height = subspace_height - 1
-
     new_img = np.zeros((new_height, new_width, 3), dtype=np.uint8)
 
-    og_row_ind = 0
-    og_col_ind = 0
-
     for y in range(new_height):
+        og_row_ind = int(y * og_height / new_height)
         for x in range(new_width):
+            og_col_ind = int(x * og_width / new_width)
             new_img[y][x] = average_pixels(generate_subspace(og_img, og_col_ind, og_row_ind, subspace_width, subspace_height))
-            og_col_ind += traversal_width
-        og_col_ind = 0
-        og_row_ind += traversal_height
     return new_img
 
 
