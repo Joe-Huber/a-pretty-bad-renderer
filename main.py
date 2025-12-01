@@ -8,4 +8,5 @@ quality_x = 100 # The quality of the image, based on how many columns there are
 
 if __name__ == "__main__":
     img = render(image_path)
+    print(img)
     generate_new_image(img, quality_x)

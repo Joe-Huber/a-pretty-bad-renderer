@@ -30,7 +30,7 @@ def generate_new_image(og_img, new_x):
     else:
         traversal_y = subspace_y -1
 
-    new_img = np.zeros([new_y, new_x])
+    new_img = np.zeros((new_y, new_x, 3), dtype=np.uint8)
 
     og_x_ind = 0
     og_y_ind = 0
@@ -70,12 +70,11 @@ def average_pixels(lis):
     b_total = 0
     pixel_count = 0
     for row in lis:
-        for col in row:
-            for pixel in col:
-                r_total += pixel[0]
-                g_total += pixel[1]
-                b_total += pixel[2]
-                pixel_count += 1
+        for pixel in row:
+            r_total += pixel[0]
+            g_total += pixel[1]
+            b_total += pixel[2]
+            pixel_count += 1
     
     if pixel_count == 0:
         return [0, 0, 0]
