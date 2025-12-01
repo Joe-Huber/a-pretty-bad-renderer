@@ -61,3 +61,22 @@ def generate_subspace(arr, x, y, width, length):
         subspace.append(row)
     
     return subspace
+
+def average_pixels(lis):
+    # This way is valuing the RGB values, no curve applied
+    r_total = 0
+    g_total = 0
+    b_total = 0
+    pixel_count = 0
+    for row in lis:
+        for col in row:
+            for pixel in col:
+                r_total += pixel[0]
+                g_total += pixel[1]
+                b_total += pixel[2]
+                pixel_count += 1
+    
+    if pixel_count == 0:
+        return [0, 0, 0]
+
+    return [int(r_total / pixel_count), int(g_total / pixel_count), int(b_total / pixel_count)]
