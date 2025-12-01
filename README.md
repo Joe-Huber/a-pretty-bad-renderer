@@ -1,31 +1,68 @@
-# A Pretty Bad Renderer
+<div align="center">
+  <h1 align="center">A Pretty Bad Renderer</h1>
+  <p align="center">
+    A simple Python script to render images in your terminal.
+  </p>
+</div>
 
-This project is a simple image renderer that takes an image file, resizes it to a specified quality, and then prints it to the console using colored ASCII characters.
+---
 
-## How to Run
+This project is a simple image renderer that takes an image file, resizes it to a specified quality, and then prints it to the console using colored ASCII block characters.
 
-1.  **Install dependencies:**
-    *   `numpy`
-    *   `colorama`
-    *   `matplotlib`
-    *   `Pillow` (PIL)
+## ✨ Features
 
-2.  **Place your image:**
-    *   Put the image you want to render in the `images` directory.
+*   **Image to ASCII:** Converts standard image files into a terminal-based representation.
+*   **Color Support:** Uses `colorama` to render the image with 24-bit RGB colors.
+*   **Custom Quality:** Easily adjust the output width of the rendered image.
 
-3.  **Configure `main.py`:**
-    *   Open `main.py` and set the `image_path` variable to the path of your image.
-    *   Adjust the `quality_x` variable to control the width of the output image.
+## 🚀 Getting Started
 
-4.  **Run the program:**
+### Prerequisites
+
+Make sure you have Python 3 installed on your system.
+
+### Installation
+
+1.  Clone the repository:
     ```bash
-    python main.py
+    git clone https://github.com/jojohuber/a-pretty-bad-renderer.git
+    cd a-pretty-bad-renderer
     ```
+
+2.  Install the required dependencies:
+    ```bash
+    pip install numpy colorama matplotlib pillow
+    ```
+
+## Usage
+
+1.  **Add your image:**
+    *   Place the image you want to render inside the `images/` directory.
+
+2.  **Configure the script:**
+    *   Open `main.py` and update the following variables:
+        *   `image_path`: Set this to the path of your image (e.g., `"images/my-image.png"`).
+        *   `quality_x`: Adjust this number to control the width (in characters) of the output image.
+
+3.  **Run it:**
+    ```bash
+    python3 main.py
+    ```
+
+    You will see your image rendered in the terminal!
 
 ## Project Structure
 
-*   `main.py`: The main entry point for the program. It loads an image, generates a new one with a specified quality, and prints it to the console.
-*   `image_loader.py`: Contains the `render` function, which loads an image from a file path and returns it as a NumPy array.
-*   `develop_modified_image.py`: Contains the logic for resizing the image. The `generate_new_image` function takes an image and a new width, and generates a new, resized image.
-*   `color_print.py`: Contains the `print_colored_image` function, which takes a 2D array of RGB values and prints it to the console using colored ASCII characters.
-*   `images/`: A directory to store your images.
+```
+.
+├── main.py                  # Main script to run the renderer
+├── image_loader.py          # Handles loading the image file
+├── develop_modified_image.py  # Core logic for image resizing
+├── color_print.py           # Handles the terminal output
+├── images/                    # Directory for your images
+└── README.md                # You are here!
+```
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
