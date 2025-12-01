@@ -37,10 +37,11 @@ def generate_new_image(og_img, new_x):
 
     for y in range(new_y):
         for x in range(new_x):
-            print(f"Processing pixel at ({x}, {y})")
+            new_img[y][x] = average_pixels(generate_subspace(og_img, og_x_ind, og_y_ind, subspace_x, subspace_y))
             og_x_ind += traversal_x
         og_x_ind = 0
         og_y_ind += traversal_y
+    print(new_img)
 
 
 def get_dimensions(arr):
