@@ -3,6 +3,7 @@ from rsa.common import ceil_div
 
 def generate_new_image(og_img, new_x):
     #Generate the necessary components
+
     #Original dimensions
     og_dimensions = get_dimensions(og_img)
     og_x = og_dimensions[0]
@@ -14,6 +15,17 @@ def generate_new_image(og_img, new_x):
     subspace_x = ceil_div(og_x, new_x)
     subspace_y = ceil_div(og_y, new_y)
 
+    #The traversal sizes (how many spots to move in loop)
 
+    #X traversal
+    if og_x % new_x == 0:
+        traversal_x = subspace_x
+    else:
+        traversal_x = subspace_x -1
+    #Y traversal
+    if og_y % new_y == 0:
+        traversal_y = subspace_y
+    else:
+        traversal_y = subspace_y -1
 def get_dimensions(arr):
     return [len(arr), len(arr[0])]
