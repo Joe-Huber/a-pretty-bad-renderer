@@ -7,8 +7,7 @@ def load_image(path):
     return image
 
 def get_rgb(image):
-    im = Image.open('image.gif')
-    im_matrix = np.array(im)
+    im_matrix = np.array(image)
     return im_matrix
 
 def render(path):
