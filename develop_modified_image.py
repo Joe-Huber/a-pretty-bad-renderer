@@ -41,7 +41,7 @@ def generate_new_image(og_img, new_x):
             og_x_ind += traversal_x
         og_x_ind = 0
         og_y_ind += traversal_y
-    print(new_img)
+    return new_img
 
 
 def get_dimensions(arr):
