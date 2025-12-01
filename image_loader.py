@@ -3,7 +3,6 @@ from PIL import Image
 
 def load_image(path):
     image = Image.open(path)
-    image.show()
     return image
 
 def get_rgb(image):
