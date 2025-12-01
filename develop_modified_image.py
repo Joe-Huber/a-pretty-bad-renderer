@@ -2,45 +2,45 @@ import numpy as np
 from rsa.common import ceil_div
 
 
-def generate_new_image(og_img, new_x):
+def generate_new_image(og_img, new_width):
     #Generate the necessary components
 
     #Original dimensions
     og_dimensions = get_dimensions(og_img)
-    og_x = og_dimensions[0]
-    og_y = og_dimensions[1]
+    og_height = og_dimensions[0]
+    og_width = og_dimensions[1]
 
-    new_y = int(og_y * new_x / og_x)
+    new_height = int(og_height * new_width / og_width)
 
     #subspace dimensions for averaged pixels
-    subspace_x = ceil_div(og_x, new_x)
-    subspace_y = ceil_div(og_y, new_y)
+    subspace_width = ceil_div(og_width, new_width)
+    subspace_height = ceil_div(og_height, new_height)
 
     #The traversal sizes (how many spots to move in loop)
 
     #X traversal
-    if og_x % new_x == 0:
-        traversal_x = subspace_x
+    if og_width % new_width == 0:
+        traversal_width = subspace_width
     else:
-        traversal_x = subspace_x -1
+        traversal_width = subspace_width - 1
 
     #Y traversal
-    if og_y % new_y == 0:
-        traversal_y = subspace_y
+    if og_height % new_height == 0:
+        traversal_height = subspace_height
     else:
-        traversal_y = subspace_y -1
+        traversal_height = subspace_height - 1
 
-    new_img = np.zeros((new_y, new_x, 3), dtype=np.uint8)
+    new_img = np.zeros((new_height, new_width, 3), dtype=np.uint8)
 
-    og_x_ind = 0
-    og_y_ind = 0
+    og_row_ind = 0
+    og_col_ind = 0
 
-    for y in range(new_y):
-        for x in range(new_x):
-            new_img[y][x] = average_pixels(generate_subspace(og_img, og_x_ind, og_y_ind, subspace_x, subspace_y))
-            og_x_ind += traversal_x
-        og_x_ind = 0
-        og_y_ind += traversal_y
+    for y in range(new_height):
+        for x in range(new_width):
+            new_img[y][x] = average_pixels(generate_subspace(og_img, og_col_ind, og_row_ind, subspace_width, subspace_height))
+            og_col_ind += traversal_width
+        og_col_ind = 0
+        og_row_ind += traversal_height
     return new_img
 
 
