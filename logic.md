@@ -47,4 +47,13 @@ Take the image and convert it into a 2d array of RGB values.
 Every time, consistent number of pixels being averaged
 
 Subspace size is ceiling (Og / New)  
-Traversal length is subspace length if no ceiling needed, but subspace length -1 if division was not needed
+Traversal length is subspace length if no ceiling needed, but subspace length -1 if division was not 
+
+## Non-Square
+### 7x2 -> 3x1
+| a | b | c | d | e | f | g |
+|---|---|---|---|---|---|---|
+| h | i | j | k | l | m | n |
+
+| abchij | cdejkl | efglmn |
+|--------|--------|--------|
