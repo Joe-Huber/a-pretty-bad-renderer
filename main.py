@@ -5,7 +5,8 @@ from develop_modified_image import generate_new_image
 
 image_path = "images/172x172.png"
 quality_x = 100 # The quality of the image, based on how many columns there are
+quality_y = 100
 
 if __name__ == "__main__":
     img = render(image_path)
-    generate_new_image(img, quality_x)
+    generate_new_image(img, quality_x, quality_y)
