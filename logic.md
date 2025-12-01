@@ -46,4 +46,5 @@ Take the image and convert it into a 2d array of RGB values.
 
 Every time, consistent number of pixels being averaged
 
-Subspace size is ceiling (Og / New)
+Subspace size is ceiling (Og / New)  
+Traversal length is subspace length if no ceiling needed, but subspace length -1 if division was not needed
