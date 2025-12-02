@@ -3,6 +3,20 @@
   <p align="center">
     A simple Python script to render images in your terminal.
   </p>
+  <p align="center">
+    <a href="https://github.com/joe-huber/a-pretty-bad-renderer/blob/main/LICENSE">
+      <img alt="License" src="https://img.shields.io/github/license/joe-huber/a-pretty-bad-renderer">
+    </a>
+    <a href="https://github.com/joe-huber/a-pretty-bad-renderer/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/joe-huber/a-pretty-bad-renderer">
+    </a>
+    <a href="https://github.com/joe-huber/a-pretty-bad-renderer/network/members">
+      <img alt="Forks" src="https://img.shields.io/github/forks/joe-huber/a-pretty-bad-renderer">
+    </a>
+    <a href="https://github.com/joe-huber/a-pretty-bad-renderer/stargazers">
+      <img alt="Stars" src="https://img.shields.io/github/stars/joe-huber/a-pretty-bad-renderer">
+    </a>
+  </p>
 </div>
 
 ---
@@ -25,7 +39,7 @@ Make sure you have Python 3 installed on your system.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/jojohuber/a-pretty-bad-renderer.git
+    git clone https://github.com/joe-huber/a-pretty-bad-renderer.git
     cd a-pretty-bad-renderer
     ```
 
