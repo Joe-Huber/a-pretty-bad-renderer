@@ -1,5 +1,7 @@
 from colorama import init, Fore, Style
 
+printing_char = '█'
+
 def print_colored_image(image_data):
     """
     Prints a 2D array of RGB values to the console as a colored image.
@@ -16,7 +18,7 @@ def print_colored_image(image_data):
         for row in image_data:
             for r, g, b in row:
                 # Set the foreground color using 24-bit ANSI escape codes
-                print(f"\x1b[38;2;{r};{g};{b}m█", end="")
+                print(f"\x1b[38;2;{r};{g};{b}m{printing_char}", end="")
             print()  # Newline after each row
     finally:
         # Reset the color and deinitialize colorama
