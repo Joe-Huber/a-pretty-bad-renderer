@@ -3,7 +3,7 @@
 from image_loader import render
 from develop_modified_image import generate_new_image
 from color_print import print_colored_image
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 image_path = "images/renderer-image.png"
 quality_x = 150 # The quality of the image, based on how many columns there are
